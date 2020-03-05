@@ -38,22 +38,24 @@ class App extends React.Component {
     }
     //Update the state to the local results if not an error
     console.log("Outside local results")
-    if(localResults && !localResults.code){
-      console.log("Inside local results")
-      this.setState({
-        title: localResults.title,
-        copyright: localResults.copyright,
-        url: localResults.url,
-        description: this.parseDescription(localResults.explanation),
-        date: localDate
-      })
-    }
+    // if(localResults && !localResults.code){
+    //   console.log("Inside local results")
+    //   this.setState({
+    //     title: localResults.title,
+    //     copyright: localResults.copyright,
+    //     url: localResults.url,
+    //     description: this.parseDescription(localResults.explanation),
+    //     date: localDate
+    //   })
+    // }
     //Change the request date to today
     this.setState({
-      requestedDate: this.dateToString()
-    }, () => {
-      this.fetchFromApi();
+        requestedDate: this.dateToString()
+      }, () => {
+        this.fetchFromApi();
     })
+
+    console.log("Hello 1")
 
     if (navigator.onLine) {
       console.log('online');
