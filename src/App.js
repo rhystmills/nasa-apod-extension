@@ -134,7 +134,7 @@ class App extends React.Component {
   fetchFromApi(){
     //Fetches current date's info from APOD
     const apodObject = this.fetchPostsFromApod();
-    // console.log(apodObject)
+    console.log(apodObject)
     apodObject.then(results => this.processResults(results))
   }
 
@@ -165,6 +165,7 @@ class App extends React.Component {
     let prevDay = this.dateToString(this.state.requestedDate,-1)
     this.testDay(nextDay);
     this.testDay(prevDay,true);
+    console.log(results);
 
     this.setState({
       title: results.title,
@@ -176,7 +177,7 @@ class App extends React.Component {
   }
 
   parseDescription(desc) {
-    // console.log(desc)
+    console.log(desc)
     let newDesc = desc;
 
     // Remove anything after the triple Space
