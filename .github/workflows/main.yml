@@ -23,7 +23,7 @@ jobs:
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         REACT_APP_API_KEY: ${{ secrets.REACT_APP_API_KEY }}
         BRANCH: gh-pages
         FOLDER: build
