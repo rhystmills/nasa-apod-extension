@@ -1,0 +1,218 @@
+* {
+  border: 0px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #000;
+  width: auto;
+  height: auto;
+  color: #CACACA;
+  font-family: "roboto";
+}
+.imgOrVid {
+  object-fit: contain;
+  flex-grow: 1;
+  max-height: 100vh;
+  max-width: 100%;
+}
+.vid {
+  height: 100vh;
+}
+.App {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: left;
+  align-items: center;
+  overflow: hidden;
+}
+.Canvas {
+  display: inline-flex;
+  flex-grow: 1;
+  max-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* Caption Panel */
+.CaptionPanel {
+  border-left: 1px solid #282c45;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  min-width: 400px;
+  max-width: 400px;
+  padding: 35px;
+  padding-bottom: 15px;
+}
+.title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+.vertFlex{
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.logo {
+  display: inline-block;
+  margin-right: 10px;
+  height: 60px;
+  width:60px;
+}
+.inline-block{
+  display: inline-block;
+}
+.description {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.scrollbarPara{
+  height: 100%;
+  display: block;
+  position: relative;
+}
+/* Day buttons */
+
+.dayButtons {
+  display: flex;
+  width: 100%;
+  padding-right: 40px;
+}
+.dayButton {
+  /* color: #1d66bb; */
+  /* background-color: Transparent; */
+  padding: auto;
+  height: 70px;
+  font-size: 13px;
+  font-weight: 700;
+  flex-grow: 1;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.2s;
+}
+.dayButton:hover {
+  /* color: #368ef5; */
+  cursor: pointer;
+}
+.prevButton {
+  /* float: right; */
+  text-align: right;
+}
+.nextButton {
+  text-align: left;
+}
+.buttonText {
+  flex-grow: 1;
+  padding: 0 8px;
+  user-select: none;
+}
+.buttonImg {
+  height: 35px;
+  width: 35px;
+  display: inline;
+  transition: all 0.2s;
+}
+/* .dayButton:hover .buttonImg {
+  color: #368ef5;
+  fill: #368ef5;
+}
+.dayButton:active, .dayButton:active .buttonImg{
+  color: #87beff;
+  fill: #87beff;
+} */
+/* .dayButton:active .buttonImg {
+  filter: brightness(0) saturate(100%) invert(72%) sepia(5%) saturate(4438%) hue-rotate(184deg) brightness(100%) contrast(102%);
+} */
+.active {
+  color: #1d66bb;
+}
+.active .buttonImg{
+  fill: #1d66bb;
+}
+.active:hover{
+  color: #368ef5;
+}
+.active:hover .buttonImg {
+  fill: #368ef5;
+}
+.active:active {
+  color: #87beff;
+  transition: 0s;
+}
+.active:active .buttonImg {
+  fill: #87beff;
+  transition: 0s;
+}
+.inactive {
+  color: #555;
+  cursor: default;
+}
+.inactive:hover{
+  color: #555;
+  cursor: default
+}
+.inactive .buttonImg{
+  fill: #555;
+}
+.inactive:hover .buttonImg, {
+  fill: #555;
+}
+/* Scrollbar Styles */
+.thumb {
+  border-radius: 5px;
+  background-color: rgb(40,49,69,1);
+}
+.thumb:hover{
+  background-color: rgba(27, 93, 170, 1);
+  cursor: pointer;
+}
+
+/*Standard Element styles */
+h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+h4 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+h5 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+header {
+  padding-right: 35px;
+}
+p {
+  font-size: 13px;
+  margin-bottom: 0.4rem;
+}
+section {
+  padding-right: 25px;
+  margin-top: 25px;
+}
+hr {
+  border-bottom: 1px solid #282c45;
+}
