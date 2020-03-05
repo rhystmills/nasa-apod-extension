@@ -13,7 +13,7 @@ class App extends React.Component {
       description: ["Loading"],
       copyright: "",
       img: "",
-      apiKey: process.env.apiKey,
+      apiKey: process.env.REACT_APP_API_KEY,
       date: "",
       requestedDate: "",
       apiResults: {},
