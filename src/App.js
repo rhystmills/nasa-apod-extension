@@ -49,6 +49,10 @@ class App extends React.Component {
     //   })
     // }
     //Change the request date to today
+    localDate = this.dateToString();
+    this.setState({
+        date: localDate
+    })
     this.setState({
         requestedDate: this.dateToString()
       }, () => {
