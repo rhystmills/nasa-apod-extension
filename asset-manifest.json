@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/nasa-apod-extension/static/css/main.4798f069.chunk.css",
-    "main.js": "/nasa-apod-extension/static/js/main.0fe8e235.chunk.js",
-    "main.js.map": "/nasa-apod-extension/static/js/main.0fe8e235.chunk.js.map",
+    "main.js": "/nasa-apod-extension/static/js/main.8f28e134.chunk.js",
+    "main.js.map": "/nasa-apod-extension/static/js/main.8f28e134.chunk.js.map",
     "runtime-main.js": "/nasa-apod-extension/static/js/runtime-main.85871d98.js",
     "runtime-main.js.map": "/nasa-apod-extension/static/js/runtime-main.85871d98.js.map",
-    "static/js/2.559adb77.chunk.js": "/nasa-apod-extension/static/js/2.559adb77.chunk.js",
-    "static/js/2.559adb77.chunk.js.map": "/nasa-apod-extension/static/js/2.559adb77.chunk.js.map",
+    "static/js/2.94028b11.chunk.js": "/nasa-apod-extension/static/js/2.94028b11.chunk.js",
+    "static/js/2.94028b11.chunk.js.map": "/nasa-apod-extension/static/js/2.94028b11.chunk.js.map",
     "index.html": "/nasa-apod-extension/index.html",
-    "precache-manifest.97d327899e83fb84c3a8fb17415d6df1.js": "/nasa-apod-extension/precache-manifest.97d327899e83fb84c3a8fb17415d6df1.js",
+    "precache-manifest.43b19de52537acede8a21dff8d9fcbdc.js": "/nasa-apod-extension/precache-manifest.43b19de52537acede8a21dff8d9fcbdc.js",
     "service-worker.js": "/nasa-apod-extension/service-worker.js",
     "static/css/main.4798f069.chunk.css.map": "/nasa-apod-extension/static/css/main.4798f069.chunk.css.map",
-    "static/js/2.559adb77.chunk.js.LICENSE.txt": "/nasa-apod-extension/static/js/2.559adb77.chunk.js.LICENSE.txt",
+    "static/js/2.94028b11.chunk.js.LICENSE.txt": "/nasa-apod-extension/static/js/2.94028b11.chunk.js.LICENSE.txt",
     "static/media/NASA_logo.svg": "/nasa-apod-extension/static/media/NASA_logo.ee15e8fa.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.85871d98.js",
-    "static/js/2.559adb77.chunk.js",
+    "static/js/2.94028b11.chunk.js",
     "static/css/main.4798f069.chunk.css",
-    "static/js/main.0fe8e235.chunk.js"
+    "static/js/main.8f28e134.chunk.js"
   ]
 }
