@@ -1,6 +1,6 @@
 import React from 'react';
 // import exampleImg from './example_img.jpg';
-import {apiKey} from './Config.js'
+// import {apiKey} from './Config.js'
 import './App.css';
 import CaptionPanel from './CaptionPanel.js'
 import Canvas from './Canvas.js'
