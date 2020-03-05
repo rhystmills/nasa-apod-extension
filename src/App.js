@@ -37,7 +37,9 @@ class App extends React.Component {
       localDate = this.dateToString();
     }
     //Update the state to the local results if not an error
+    console.log("Outside local results")
     if(localResults && !localResults.code){
+      console.log("Inside local results")
       this.setState({
         title: localResults.title,
         copyright: localResults.copyright,
