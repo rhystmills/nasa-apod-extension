@@ -59,7 +59,7 @@ class App extends React.Component {
         this.fetchFromApi();
     })
 
-    console.log("Hello 1")
+    console.log("Hello 2")
 
     if (navigator.onLine) {
       console.log('online');
