@@ -31,11 +31,11 @@ class App extends React.Component {
     let localDate = "";
     //Check that local results are not an error from the API
     //Then set the date to the local date
-    if (localResults && !localResults.code) {
-      localDate = this.dateToString(localResults.date)
-    } else {
-      localDate = this.dateToString();
-    }
+    // if (localResults && !localResults.code) {
+    //   localDate = this.dateToString(localResults.date)
+    // } else {
+    //   localDate = this.dateToString();
+    // }
     //Update the state to the local results if not an error
     console.log("Outside local results")
     // if(localResults && !localResults.code){
