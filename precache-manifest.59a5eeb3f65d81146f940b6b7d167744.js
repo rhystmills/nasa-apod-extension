@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c5b2247b452095a028d3bab7fbf2eef",
+    "revision": "5d963a14150d2a8368c21eb7fc46e661",
     "url": "/nasa-apod-extension/index.html"
   },
   {
