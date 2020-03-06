@@ -1,4 +1,4 @@
-Inspiring images of our universe, from NASA's Astronomy Picture of the Day.
+NASA Astronomy Picture of the Day
 =====
 
 A web app displaying NASA's Astronomy Photo of the Day in a gallery format - designed to replace the New Tab in Chrome as a Chrome Extension.
