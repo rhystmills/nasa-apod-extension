@@ -162,12 +162,12 @@ body {
   color: #555;
   cursor: default;
 }
+.inactive .buttonImg{
+  fill: #555;
+}
 .inactive:hover{
   color: #555;
   cursor: default
-}
-.inactive .buttonImg{
-  fill: #555;
 }
 .inactive:hover .buttonImg, {
   fill: #555;
