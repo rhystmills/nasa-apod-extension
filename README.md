@@ -5,4 +5,4 @@ A web app displaying NASA's Astronomy Photo of the Day in a gallery format - des
 
 All content derived from the NASA APOD API.
 
-Demo is available [here](https://rhystmills.github.io/nasa-apod-extension/)
+Demo is available [here](https://rhystmills.github.io/nasa-apod-extension/).
