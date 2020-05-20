@@ -1,5 +1,4 @@
 import React from 'react';
-// import exampleImg from './example_img.jpg';
 // import {apiKey} from './Config.js'
 import './App.css';
 import CaptionPanel from './CaptionPanel.js'
@@ -31,23 +30,23 @@ class App extends React.Component {
     let localDate = "";
     //Check that local results are not an error from the API
     //Then set the date to the local date
-    // if (localResults && !localResults.code) {
-    //   localDate = this.dateToString(localResults.date)
-    // } else {
-    //   localDate = this.dateToString();
-    // }
+    if (localResults && !localResults.code) {
+      localDate = this.dateToString(localResults.date)
+    } else {
+      localDate = this.dateToString();
+    }
     //Update the state to the local results if not an error
-    console.log("Outside local results")
-    // if(localResults && !localResults.code){
-    //   console.log("Inside local results")
-    //   this.setState({
-    //     title: localResults.title,
-    //     copyright: localResults.copyright,
-    //     url: localResults.url,
-    //     description: this.parseDescription(localResults.explanation),
-    //     date: localDate
-    //   })
-    // }
+    // console.log("Outside local results")
+    if(localResults && !localResults.code){
+      // console.log("Inside local results")
+      this.setState({
+        title: localResults.title,
+        copyright: localResults.copyright,
+        url: localResults.url,
+        description: this.parseDescription(localResults.explanation),
+        date: localDate
+      })
+    }
     //Change the request date to today
     localDate = this.dateToString();
     this.setState({
@@ -79,21 +78,21 @@ class App extends React.Component {
 
 
   nextDay(){
-    let newDate = this.dateToString(this.state.date,1)
     this.setState({
-      requestedDate: newDate
+      requestedDate: this.dateToString(this.state.date, 1)
       }, () => {
       this.fetchFromApi();
     })
   }
 
   prevDay(){
-    let newDate = this.dateToString(this.state.date,-1)
+    let newDate = this.dateToString(this.state.date, -1)
     this.setState({
       requestedDate: newDate
       }, () => {
       this.fetchFromApi();
-    })
+      }
+    )
   }
 
   testDay(date,prevDay){
@@ -142,38 +141,29 @@ class App extends React.Component {
   fetchFromApi(){
     //Fetches current date's info from APOD
     const apodObject = this.fetchPostsFromApod();
-    console.log(apodObject)
-    apodObject.then(results => this.processResults(results))
+    apodObject.then(results => {
+      if(!results.code){
+        this.setState({
+          requestedDate: results.date
+          }, () =>
+          this.processResults(results)
+        )
+      }
+    })
   }
 
   fetchPostsFromApod(date) {
-    return fetch('https://api.nasa.gov/planetary/apod?api_key='+this.state.apiKey+'&date='+(date||this.state.requestedDate))
+    return fetch('https://api.nasa.gov/planetary/apod?api_key=' + this.state.apiKey + '&date=' + (date || this.state.requestedDate))
       .then(response => response.json())
   }
 
   processResults(results){
     localStorage.setItem('localResults', JSON.stringify(results));
 
-    //If request fails
-    if (results.code && this.state.requestedDate === this.dateToString()){
-      this.setState({
-        requestedDate: this.dateToString(this.dateToString(),-1)
-      })
-      return;
-    }
-    else if (results.code) {
-      this.setState({
-        requestedDate: this.dateToString()
-      })
-      return;
-    }
-
-    //Test the next and previous days for availability - updates state
-    let nextDay = this.dateToString(this.state.requestedDate,1);
-    let prevDay = this.dateToString(this.state.requestedDate,-1)
+    let nextDay = this.dateToString(this.state.requestedDate, 1);
+    let prevDay = this.dateToString(this.state.requestedDate, -1)
     this.testDay(nextDay);
     this.testDay(prevDay,true);
-    console.log(results);
 
     this.setState({
       title: results.title,
@@ -185,23 +175,19 @@ class App extends React.Component {
   }
 
   parseDescription(desc) {
-    console.log(desc)
     let newDesc = desc;
 
     // Remove anything after the triple Space
-    if (desc.indexOf("   ") !== -1 && newDesc.slice(newDesc.indexOf("   "),newDesc.length-1).length <200){
-      console.log(newDesc.slice(newDesc.indexOf("   "),newDesc.length-1));
+    if (desc.indexOf("   ") !== -1 && newDesc.slice(newDesc.indexOf("   "),newDesc.length-1).length <300){
       newDesc = newDesc.slice(0,newDesc.indexOf("   "));
-      // console.log("Triple space found")
     }
 
     function returnArrayOfParagraphs(desc,paraArrayPassed){
       let paraArray = paraArrayPassed || [];
-      // console.log(paraArray)
 
-      if (desc.indexOf("  ") !== -1){
-        let paragraph = desc.slice(0,desc.indexOf("  "));
-        let trimmedDesc = desc.slice(desc.indexOf("  ")+2,desc.length)
+      if (desc.indexOf(".  ") !== -1){
+        let paragraph = desc.slice(0,desc.indexOf(".  ")+1);
+        let trimmedDesc = desc.slice(desc.indexOf(".  ")+3,desc.length)
         paraArray.push(paragraph);
         returnArrayOfParagraphs(trimmedDesc,paraArray)
       } else {

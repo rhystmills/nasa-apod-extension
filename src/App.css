@@ -18,9 +18,23 @@ body {
   flex-grow: 1;
   max-height: 100vh;
   max-width: 100%;
+  background-image: url("/vectors/NASA-logo.svg");
 }
 .vid {
   height: 100vh;
+}
+.w100 {
+  width: 100%;
+}
+.loadSpinner {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .App {
   display: flex;
@@ -33,6 +47,7 @@ body {
 }
 .Canvas {
   display: inline-flex;
+  position: relative;
   flex-grow: 1;
   max-height: 100vh;
   background-position: center;
@@ -64,6 +79,9 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+.flex-grow{
+  flex-grow: 1;
 }
 .logo {
   display: inline-block;
@@ -138,6 +156,14 @@ body {
 /* .dayButton:active .buttonImg {
   filter: brightness(0) saturate(100%) invert(72%) sepia(5%) saturate(4438%) hue-rotate(184deg) brightness(100%) contrast(102%);
 } */
+.visible {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 1s;
+}
 .active {
   color: #1d66bb;
 }

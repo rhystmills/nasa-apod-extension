@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './NASA_logo.svg';
+import logo from './vectors/NASA_logo.svg';
 
 function CaptionTitle() {
   return (
