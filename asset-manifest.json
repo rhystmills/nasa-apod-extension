@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/nasa-apod-extension/static/css/main.c1150f0b.chunk.css",
-    "main.js": "/nasa-apod-extension/static/js/main.bbe54d2b.chunk.js",
-    "main.js.map": "/nasa-apod-extension/static/js/main.bbe54d2b.chunk.js.map",
-    "runtime-main.js": "/nasa-apod-extension/static/js/runtime-main.85871d98.js",
-    "runtime-main.js.map": "/nasa-apod-extension/static/js/runtime-main.85871d98.js.map",
-    "static/js/2.559adb77.chunk.js": "/nasa-apod-extension/static/js/2.559adb77.chunk.js",
-    "static/js/2.559adb77.chunk.js.map": "/nasa-apod-extension/static/js/2.559adb77.chunk.js.map",
+    "main.css": "/nasa-apod-extension/static/css/main.cd7c13c2.chunk.css",
+    "main.js": "/nasa-apod-extension/static/js/main.d694a183.chunk.js",
+    "main.js.map": "/nasa-apod-extension/static/js/main.d694a183.chunk.js.map",
+    "runtime-main.js": "/nasa-apod-extension/static/js/runtime-main.d6cfe9be.js",
+    "runtime-main.js.map": "/nasa-apod-extension/static/js/runtime-main.d6cfe9be.js.map",
+    "static/js/2.08beb0b3.chunk.js": "/nasa-apod-extension/static/js/2.08beb0b3.chunk.js",
+    "static/js/2.08beb0b3.chunk.js.map": "/nasa-apod-extension/static/js/2.08beb0b3.chunk.js.map",
     "index.html": "/nasa-apod-extension/index.html",
-    "precache-manifest.c6d7d1b73897692790638e3473bfe28f.js": "/nasa-apod-extension/precache-manifest.c6d7d1b73897692790638e3473bfe28f.js",
+    "precache-manifest.c23fa2efe86b46a3f53f370459bef076.js": "/nasa-apod-extension/precache-manifest.c23fa2efe86b46a3f53f370459bef076.js",
     "service-worker.js": "/nasa-apod-extension/service-worker.js",
-    "static/css/main.c1150f0b.chunk.css.map": "/nasa-apod-extension/static/css/main.c1150f0b.chunk.css.map",
-    "static/js/2.559adb77.chunk.js.LICENSE.txt": "/nasa-apod-extension/static/js/2.559adb77.chunk.js.LICENSE.txt",
-    "static/media/NASA_logo.svg": "/nasa-apod-extension/static/media/NASA_logo.ee15e8fa.svg"
+    "static/css/main.cd7c13c2.chunk.css.map": "/nasa-apod-extension/static/css/main.cd7c13c2.chunk.css.map",
+    "static/js/2.08beb0b3.chunk.js.LICENSE.txt": "/nasa-apod-extension/static/js/2.08beb0b3.chunk.js.LICENSE.txt",
+    "static/media/NASA_logo.svg": "/nasa-apod-extension/static/media/NASA_logo.ee15e8fa.svg",
+    "static/media/tail-spin.svg": "/nasa-apod-extension/static/media/tail-spin.a75a5f09.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.85871d98.js",
-    "static/js/2.559adb77.chunk.js",
-    "static/css/main.c1150f0b.chunk.css",
-    "static/js/main.bbe54d2b.chunk.js"
+    "static/js/runtime-main.d6cfe9be.js",
+    "static/js/2.08beb0b3.chunk.js",
+    "static/css/main.cd7c13c2.chunk.css",
+    "static/js/main.d694a183.chunk.js"
   ]
 }
