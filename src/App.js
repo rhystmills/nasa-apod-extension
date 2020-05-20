@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import CaptionPanel from './CaptionPanel.js'
 import Canvas from './Canvas.js'
+import Indicators from './indicators/Indicators.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -203,6 +204,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Indicators/>
         <Canvas
           url={this.state.url}
           alt={this.state.title}

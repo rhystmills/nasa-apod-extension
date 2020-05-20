@@ -13,18 +13,32 @@ body {
   color: #CACACA;
   font-family: "roboto", "Helvetica", "Arial", sans-serif;
 }
+
+/* COMPONENTS */
+.App {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100vw;
+  text-align: left;
+  align-items: center;
+  overflow: hidden;
+}
+.offlineInd {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .imgOrVid {
   object-fit: contain;
   flex-grow: 1;
   max-height: 100vh;
   max-width: 100%;
   background-image: url("/vectors/NASA-logo.svg");
-}
-.vid {
-  height: 100vh;
-}
-.w100 {
-  width: 100%;
 }
 .loadSpinner {
   position: absolute;
@@ -35,15 +49,6 @@ body {
   flex-direction: row;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-}
-.App {
-  display: flex;
-  flex-direction: row;
-  min-height: 100vh;
-  width: 100vw;
-  text-align: left;
-  align-items: center;
-  overflow: hidden;
 }
 .Canvas {
   display: inline-flex;
@@ -66,6 +71,16 @@ body {
   padding: 35px;
   padding-bottom: 15px;
 }
+
+.vid {
+  height: 100vh;
+}
+.w100 {
+  width: 100%;
+}
+
+
+
 .title {
   margin-top: 40px;
   margin-bottom: 40px;
