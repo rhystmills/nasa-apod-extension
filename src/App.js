@@ -19,7 +19,8 @@ class App extends React.Component {
       apiResults: {},
       url: "",
       nextDayAvailable: false,
-      previousDayAvailable: false
+      previousDayAvailable: false,
+      buttonsActive: true
     };
     this.nextDay = this.nextDay.bind(this);
     this.prevDay = this.prevDay.bind(this);
@@ -27,7 +28,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const localResults = JSON.parse(localStorage.getItem('localResults'));
+    let localResults = JSON.parse(localStorage.getItem('localResults'));
+
     let localDate = "";
     //Check that local results are not an error from the API
     //Then set the date to the local date
@@ -37,9 +39,7 @@ class App extends React.Component {
       localDate = this.dateToString();
     }
     //Update the state to the local results if not an error
-    // console.log("Outside local results")
     if(localResults && !localResults.code){
-      // console.log("Inside local results")
       this.setState({
         title: localResults.title,
         copyright: localResults.copyright,
@@ -58,42 +58,29 @@ class App extends React.Component {
       }, () => {
         this.fetchFromApi();
     })
-
-    // console.log("Hello 2")
-
-    if (navigator.onLine) {
-      console.log('online');
-    } else {
-      console.log('offline');
-    }
-    window.addEventListener('online', function(e) {
-      // Re-sync data with server.
-      console.log("online")
-    }, false);
-
-    window.addEventListener('offline', function(e) {
-      // Queue up events for server.
-      console.log("offline")
-    }, false);
   }
 
 
   nextDay(){
-    this.setState({
-      requestedDate: this.dateToString(this.state.date, 1)
-      }, () => {
-      this.fetchFromApi();
-    })
+    if (this.state.buttonsActive){
+      this.setState({
+        buttonsActive: false,
+        requestedDate: this.dateToString(this.state.date, 1)
+        }, () => {
+        this.fetchFromApi();
+      })
+    }
   }
 
   prevDay(){
-    let newDate = this.dateToString(this.state.date, -1)
-    this.setState({
-      requestedDate: newDate
-      }, () => {
-      this.fetchFromApi();
-      }
-    )
+    if (this.state.buttonsActive){
+      this.setState({
+        buttonsActive: false,
+        requestedDate: this.dateToString(this.state.date, -1)
+        }, () => {
+        this.fetchFromApi();
+      })
+    }
   }
 
   testDay(date,prevDay){
@@ -154,7 +141,7 @@ class App extends React.Component {
   }
 
   fetchPostsFromApod(date) {
-    return fetch('https://api.nasa.gov/planetary/apod?api_key=' + this.state.apiKey + '&date=' + (date || this.state.requestedDate))
+    return fetch('https://zoay24183i.execute-api.eu-west-1.amazonaws.com/public?date=' + (date || this.state.requestedDate))
       .then(response => response.json())
   }
 
@@ -167,6 +154,7 @@ class App extends React.Component {
     this.testDay(prevDay,true);
 
     this.setState({
+      buttonsActive: true,
       title: results.title,
       copyright: results.copyright,
       url: results.url,
@@ -179,8 +167,8 @@ class App extends React.Component {
     let newDesc = desc;
 
     // Remove anything after the triple Space
-    if (desc.indexOf("   ") !== -1 && newDesc.slice(newDesc.indexOf("   "),newDesc.length-1).length <300){
-      newDesc = newDesc.slice(0,newDesc.indexOf("   "));
+    if (desc.lastIndexOf("   ") !== -1 && newDesc.slice(newDesc.lastIndexOf("   "),newDesc.length-1).length <300){
+      newDesc = newDesc.slice(0,newDesc.lastIndexOf("   "));
     }
 
     function returnArrayOfParagraphs(desc,paraArrayPassed){

@@ -23,13 +23,13 @@ class DayButtons extends React.Component{
     }
     return (
       <nav className="dayButtons">
-        <div className={`inlineBlock nextButton dayButton ${nextDayAvailable}`} onClick={this.props.nextDay}>
-          <LeftArrow className={`buttonImg ${nextDayAvailable}`}/>
-          <span className="buttonText">Next Day</span>
-        </div>
         <div className={`inlineBlock prevButton dayButton ${prevDayAvailable}`} onClick={this.props.prevDay}>
+          <LeftArrow className={`buttonImg ${prevDayAvailable}`}/>
           <span className="buttonText">Previous Day</span>
-          <RightArrow className={`buttonImg ${prevDayAvailable}`}/>
+        </div>
+        <div className={`inlineBlock nextButton dayButton ${nextDayAvailable}`} onClick={this.props.nextDay}>
+          <span className="buttonText">Next Day</span>
+          <RightArrow className={`buttonImg ${nextDayAvailable}`}/>
         </div>
       </nav>
     )

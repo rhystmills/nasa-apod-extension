@@ -1,25 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+  "short_name": "NASA APOD",
+  "name": "NASA Astronomy Picture of the Day",
+  "description": "An inspiring picture of our universe every day, replacing the New Tab in Chrome.",
+  "manifest_version": 2,
+  "version": "1.02",
+  "permissions": [
+    "storage"
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-fADk4VUbkmcez1aydHzYUXKFVZS1hW2IO/HUvnSxiIQ='; object-src 'self'",  "permissions": [
+  ],
+  "icons": {
+    "16": "extension-icon.png",
+    "48": "extension-icon.png",
+    "128": "extension-icon.png"
+  }
 }

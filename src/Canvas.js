@@ -5,19 +5,17 @@ class Canvas extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      loaded: false
+      loaded: true
     };
     this.imgIsRendered = this.imgIsRendered.bind(this);
   }
   componentDidUpdate(prevProps){
     // console.log(`prevProps: ${prevProps.url}, props: ${this.props.url}`)
-    if (prevProps.url != this.props.url){
-      console.log("New image")
+    if (prevProps.url != this.props.url && prevProps.url != ""){
       this.setState({ loaded: false})
     }
   }
   imgIsRendered(){
-    console.log("loaded")
     this.setState({
       loaded: true
     })

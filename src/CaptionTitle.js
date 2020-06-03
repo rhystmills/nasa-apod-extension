@@ -6,7 +6,7 @@ function CaptionTitle() {
     <span className="title">
       <img className="logo" src={logo} alt="NASA logo"/>
       <div className="vertFlex">
-        <h3 className="inline-block">Astronomy Photo of the Day</h3>
+        <h3 className="inline-block">Astronomy Picture of the Day</h3>
       </div>
     </span>
   );
