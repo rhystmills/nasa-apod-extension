@@ -20,7 +20,8 @@ class App extends React.Component {
       url: "",
       nextDayAvailable: false,
       previousDayAvailable: false,
-      buttonsActive: true
+      buttonsActive: true,
+      displayDate: ""
     };
     this.nextDay = this.nextDay.bind(this);
     this.prevDay = this.prevDay.bind(this);
@@ -28,6 +29,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.state.date);
     let localResults = JSON.parse(localStorage.getItem('localResults'));
 
     let localDate = "";
@@ -45,15 +47,16 @@ class App extends React.Component {
         copyright: localResults.copyright,
         url: localResults.url,
         description: this.parseDescription(localResults.explanation),
-        date: localDate
+        displayDate: localDate
       })
     }
     //Change the request date to today
-    localDate = this.dateToString();
+    // localDate = this.dateToString();
+    // this.setState({
+    //     date: localDate
+    // })
     this.setState({
-        date: localDate
-    })
-    this.setState({
+        date: this.dateToString(),
         requestedDate: this.dateToString()
       }, () => {
         this.fetchFromApi();
@@ -72,11 +75,18 @@ class App extends React.Component {
     }
   }
 
-  prevDay(){
+  prevDay(override){
     if (this.state.buttonsActive){
       this.setState({
         buttonsActive: false,
         requestedDate: this.dateToString(this.state.date, -1)
+        }, () => {
+        this.fetchFromApi();
+      })
+    }
+    if (override === true){
+      this.setState({
+        requestedDate: this.dateToString(this.dateToString(), -1)
         }, () => {
         this.fetchFromApi();
       })
@@ -136,6 +146,8 @@ class App extends React.Component {
           }, () =>
           this.processResults(results)
         )
+      } else if (this.state.requestedDate === this.dateToString()){
+        this.prevDay(true);
       }
     })
   }
@@ -152,14 +164,15 @@ class App extends React.Component {
     let prevDay = this.dateToString(this.state.requestedDate, -1)
     this.testDay(nextDay);
     this.testDay(prevDay,true);
-
+    console.log(results);
     this.setState({
       buttonsActive: true,
       title: results.title,
       copyright: results.copyright,
       url: results.url,
       description: this.parseDescription(results.explanation),
-      date: this.state.requestedDate
+      date: this.state.requestedDate,
+      displayDate: results.date
     })
   }
 
@@ -203,7 +216,7 @@ class App extends React.Component {
           copyright={this.state.copyright}
           nextDay={this.nextDay}
           prevDay={this.prevDay}
-          date={this.state.date}
+          date={this.state.displayDate}
           nextDayAvailable={this.state.nextDayAvailable}
           prevDayAvailable={this.state.prevDayAvailable}
         />

@@ -3,7 +3,7 @@
   "name": "NASA Astronomy Picture of the Day",
   "description": "An inspiring picture of our universe every day, replacing the New Tab in Chrome.",
   "manifest_version": 2,
-  "version": "1.02",
+  "version": "1.03",
   "permissions": [
     "storage"
   ],
